@@ -11,6 +11,7 @@ connection.once('open', async () => {
     if (thoughtCheck.length) {
       await connection.dropCollection('thoughts');
     }
+
   
     let userCheck = await connection.db.listCollections({ name: 'users' }).toArray();
     if (userCheck.length) {
@@ -29,8 +30,7 @@ connection.once('open', async () => {
           first,
           last,
           email
-         
-          
+        
         });
       }
     
